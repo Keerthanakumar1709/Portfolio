@@ -1,160 +1,260 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Keerthana K — Full Stack Python Developer</title>
-  <meta name="description" content="Portfolio of Keerthana K — Full Stack Python Developer. Projects, skills, education and contact." />
-  <!-- Bootstrap CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keerthana K | Portfolio</title>
   <style>
+    /* Global Styles */
     body {
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: #ffffff;
-      color: #111827;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
     }
-    .container-sm { max-width: 1000px; }
-    header { padding: 2.5rem 0; }
-    .hero { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-    .avatar img {
-      width: 120px;
-      height: 120px;
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    nav ul li a:hover {
+      color: #007acc;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #eef6fb;
+    }
+    .hero img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #0d6efd;
+      margin-bottom: 1rem;
+      border: 3px solid #007acc;
     }
-    h1 { font-weight: 700; }
-    .tagline { color: #6b7280; margin-top: 6px; }
-    nav .nav-link { color: #6b7280; }
-    .skills .badge { margin: 0.2rem 0.25rem; }
+    .hero h2 {
+      margin: 0.5rem 0;
+      font-size: 2rem;
+      color: #007acc;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #007acc;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .skills-list span {
+      background: #007acc;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
     .project-card {
-      background: #f8f9fa;
-      border-radius: 8px;
-      padding: 1rem;
-      border: 1px solid #ececec;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-    .project-meta { font-size: 0.9rem; color: #6b7280; }
-    .section-title { margin-bottom: 1rem; font-weight: 600; }
-    footer { padding: 2rem 0; color: #6b7280; text-align: center; }
-    @media (max-width: 767px) {
-      .hero { flex-direction: column; align-items: flex-start; }
-      .avatar img { width: 96px; height: 96px; }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: #007acc;
+    }
+
+    /* Education */
+    .education {
+      display: grid;
+      gap: 1rem;
+    }
+    .edu-item {
+      background: #fff;
+      padding: 1rem;
+      border-left: 4px solid #007acc;
+      border-radius: 5px;
+    }
+    .edu-item h4 {
+      margin: 0;
+      color: #007acc;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border: 2px solid #007acc;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+    .contact a:hover {
+      background: #007acc;
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #007acc;
+      color: #fff;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <div class="container container-sm">
-    <header class="d-flex justify-content-between align-items-center">
-      <div class="hero">
-        <!-- 🔹 Replace the src below with your profile picture URL -->
-        <div class="avatar">
-          <img src= img src="profile.jpg" alt="Keerthana K">
->
-        </div>
-        <div>
-          <h1>Keerthana K</h1>
-          <div class="tagline">Full Stack Python Developer</div>
-          <p class="mt-2 mb-0">
-            I build clean, responsive web applications and reliable backends using modern Python stacks.
-            I love turning ideas into production-ready projects and learning new technologies along the way.
-          </p>
-        </div>
+  <!-- Header -->
+  <header>
+    <h1>Keerthana K</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="profile.jpg" alt="Keerthana K">
+    <h2>Full Stack Python Developer</h2>
+    <p>I build clean, responsive web applications and reliable backends using modern Python stacks. I love turning ideas into production-ready projects and exploring new technologies.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About</h2>
+    <p>Hi — I'm <strong>Keerthana</strong>, a Full Stack Python Developer passionate about building scalable web apps and polished user experiences. I enjoy solving real-world problems with clean code and thoughtful design. Currently pursuing BSc Computer Science and working on projects with Python, Django, and modern web technologies.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span>Python</span>
+      <span>Django</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Bootstrap</span>
+      <span>MySQL</span>
+      <span>Git</span>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Online Bus Ticket Booking System</h3>
+        <p>A platform for reserving and purchasing bus tickets online, connecting operators, agencies, and customers. </p>
+        <p><strong>Tech:</strong> PHP, HTML, CSS, MySQL</p>
       </div>
-      <nav>
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+      <div class="project-card">
+        <h3>Show Website (Design)</h3>
+        <p>Clean, modern, and visually appealing product showcase website with focus on design and usability.</p>
+        <p><strong>Tech:</strong> HTML, CSS</p>
+      </div>
+    </div>
+  </section>
 
-    <main>
-      <section id="about" class="mb-5">
-        <h2 class="section-title">About</h2>
-        <p>
-          Hi — I'm <strong>Keerthana</strong>, a Full Stack Python Developer focused on building scalable web applications and polished user experiences.
-          I work on both frontend interfaces and backend systems, and enjoy solving real-world problems with clean code and thoughtful design.
-          Currently studying BSc Computer Science and actively building projects using Python, Django, and modern web technologies.
-        </p>
-      </section>
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education">
+      <div class="edu-item">
+        <h4>BSc. Computer Science</h4>
+        <p>Shri Nehru Maha Vidhyalaya College of Arts & Science | 2022-2025 | 75%</p>
+      </div>
+      <div class="edu-item">
+        <h4>HSC</h4>
+        <p>M C Govt Girls Higher Secondary School | 2021-2022 | 66%</p>
+      </div>
+      <div class="edu-item">
+        <h4>SSLC</h4>
+        <p>M C Govt Girls Higher Secondary School | 2019-2020 | 79%</p>
+      </div>
+    </div>
+  </section>
 
-      <section id="skills" class="mb-5">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills">
-          <span class="badge bg-light border">Python</span>
-          <span class="badge bg-light border">Django</span>
-          <span class="badge bg-light border">HTML</span>
-          <span class="badge bg-light border">CSS</span>
-          <span class="badge bg-light border">JavaScript</span>
-          <span class="badge bg-light border">Bootstrap</span>
-          <span class="badge bg-light border">MySQL</span>
-          <span class="badge bg-light border">Git</span>
-        </div>
-      </section>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="mailto:keerthanakrishnakumar17@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/keerthana47" target="_blank">LinkedIn</a>
+    </div>
+  </section>
 
-      <section id="projects" class="mb-5">
-        <h2 class="section-title">Projects</h2>
-        <div class="row g-3">
-          <div class="col-12 col-md-6">
-            <div class="project-card">
-              <h3>Online Bus Ticket Booking System</h3>
-              <p class="project-meta">
-                The process of reserving and purchasing bus tickets over the internet. A digital platform connecting bus operators,
-                travel agencies and customers, replacing manual ticketing and reservation methods.
-              </p>
-              <p><strong>Tech:</strong> PHP, HTML, CSS, MySQL</p>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6">
-            <div class="project-card">
-              <h3>Show Website (Design)</h3>
-              <p class="project-meta">
-                A clean, modern product-focused website design that highlights products with emphasis on visual clarity and user experience.
-              </p>
-              <p><strong>Tech:</strong> HTML, CSS</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="education" class="mb-5">
-        <h2 class="section-title">Education</h2>
-        <div class="mb-3">
-          <h5>BSc. Computer Science</h5>
-          <div class="text-muted">
-            Shri Nehru Maha Vidhyalaya College of Arts &amp; Science — 2022–2025 | Coimbatore — <strong>75%</strong>
-          </div>
-        </div>
-        <div class="mb-3">
-          <h5>HSC</h5>
-          <div class="text-muted">
-            M C Govt Girls Higher Secondary School — 2021–2022 | Pollachi — <strong>66%</strong>
-          </div>
-        </div>
-        <div>
-          <h5>SSLC</h5>
-          <div class="text-muted">
-            M C Govt Girls Higher Secondary School — 2019–2020 | Pollachi — <strong>79%</strong>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="mb-5">
-        <h2 class="section-title">Contact</h2>
-        <p>Email: <a href="mailto:keerthanakrishnakumar17@gmail.com">keerthanakrishnakumar17@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/keerthana47" target="_blank" rel="noopener">linkedin.com/in/keerthana47</a></p>
-      </section>
-    </main>
-
-    <footer>
-      <div>© 2025 Keerthana K — All rights reserved</div>
-    </footer>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Keerthana K | Portfolio</p>
+  </footer>
 </body>
 </html>
+
